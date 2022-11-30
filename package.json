@@ -1,0 +1,20 @@
+{
+    "name": "lab04heroku",
+    "version": "1.0.0",
+    "description": "Users API",
+    "dependencies": {
+        "restify": "4.1.1",
+		"save": "2.3.0"
+
+    },
+	"engines": {
+	"node": ">=14.0.0",
+	"npm": ">=2.1.x"
+	},
+    "author": "Viza",
+	"private": true,
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	}
+}
