@@ -1,10 +1,10 @@
 {
-    "name": "lab04heroku",
-    "version": "1.0.0",
+    "name": "lab04render",
+    "version": "1.0.1",
     "description": "Users API",
     "dependencies": {
-        "restify": "4.1.1",
-		"save": "2.3.0"
+        "restify": "11.1.0",
+		"save": "2.9.0"
 
     },
 	"engines": {

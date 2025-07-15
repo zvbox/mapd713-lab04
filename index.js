@@ -1,16 +1,16 @@
 var SERVER_NAME = 'user-api'
 var PORT = process.env.PORT;
 
+const restify = require('restify');
+const { plugins } = restify;
 
-var restify = require('restify')
+// Get a persistence engine for the users
+const usersSave = require('save')('users');
 
-  // Get a persistence engine for the users
-  , usersSave = require('save')('users')
+// Create the restify server
+const server = restify.createServer({ name: SERVER_NAME})
 
-  // Create the restify server
-  , server = restify.createServer({ name: SERVER_NAME})
-
-  server.listen(PORT, function () {
+server.listen(PORT, function () {
   console.log('Server %s listening at %s', server.name, server.url)
   console.log('Resources:')
   console.log(' /users')
@@ -19,10 +19,10 @@ var restify = require('restify')
 
 server
   // Allow the use of POST
-  .use(restify.fullResponse())
+  .use(plugins.fullResponse())
 
   // Maps req.body to req.params so there is no switching between them
-  .use(restify.bodyParser())
+  .use(plugins.bodyParser())
 
 // Get all users in the system
 server.get('/users', function (req, res, next) {
