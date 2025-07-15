@@ -1,5 +1,5 @@
 var SERVER_NAME = 'user-api'
-var PORT = process.env.PORT;
+var PORT = process.env.PORT||3000;
 
 const restify = require('restify');
 const { plugins } = restify;
@@ -11,7 +11,7 @@ const usersSave = require('save')('users');
 const server = restify.createServer({ name: SERVER_NAME})
 
 server.listen(PORT, function () {
-  console.log('Server %s listening at %s', server.name, server.url)
+  console.log('Server %s listening at %s:%s', server.name, server.url, PORT)
   console.log('Resources:')
   console.log(' /users')
   console.log(' /users/:id')  
