@@ -4,8 +4,8 @@
     "description": "Users API",
     "dependencies": {
         "restify": "11.1.0",
-		"save": "2.9.0"
-
+        "restify-errors": "8.1.0",
+        "save": "2.9.0"
     },
     "engines": {
         "node": "=20.0.0",
